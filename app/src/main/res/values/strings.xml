@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">InstagramClone</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_photo">Photo</string>
+    <string name="title_liking">Liking</string>
+    <string name="title_profile">Profile</string>
+</resources>
