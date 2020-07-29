@@ -4,32 +4,42 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.instagramclone.R;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
+    private RecyclerView recycleHome;
 
-    private HomeViewModel homeViewModel;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+    @Override
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        recycleHome = root.findViewById(R.id.home_recycle);
+        recycleHome.setHasFixedSize(true);
+        recycleHome.setLayoutManager(new LinearLayoutManager(root.getContext()));
+
+        ArrayList<String> testData = new ArrayList<>();  //  임시 data
+        testData.add("With Study Together");
+        testData.add("With Study Together");
+
+
+        recycleHome.setAdapter(new HomeAdapter(testData));
+
         return root;
     }
+
 }

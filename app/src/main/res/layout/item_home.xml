@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/list_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="#ffffff">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/user_profile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/ic_account_circle_black_24dp">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="User_ID"
+                android:gravity="center|left"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:minHeight="?actionBarSize"
+                android:layout_toRightOf="@+id/user_profile" />
+
+            <ImageView
+                android:id="@+id/direct"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_dehaze_black_24dp">
+            </ImageView>
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/Upload_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/example">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/comment_like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_liking_black_24dp">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/comment"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@+id/comment_like"
+                android:src="@drawable/ic_mode_comment_black_24dp">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/comment_direct"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@+id/comment"
+                android:src="@drawable/ic_near_me_black_24dp">
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_layers_black_24dp">
+            </ImageView>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="93 Likes">
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user_ID"
+            android:textStyle="bold">
+        </TextView>
+
+        <TextView
+            android:id="@+id/comment_context"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="비 맞으면서 출근">
+        </TextView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/hash_tag"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="#해쉬태그">
+    </TextView>
+
+</LinearLayout>
