@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FEFEFE"
@@ -20,8 +19,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="8"
                 android:layout_gravity="center"
+                android:layout_weight="8"
                 android:gravity="center"
                 android:hint="English(United States)"
                 android:textColor="#000"
@@ -35,7 +34,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/instagram"/>
+            android:src="@drawable/instagram" />
 
 
         <EditText
@@ -46,9 +45,9 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
             android:background="@drawable/editer_login"
+            android:hint="  e_mail"
             android:textColor="#000"
-            android:textSize="19dp"
-            android:hint="  e_mail"/>
+            android:textSize="19dp" />
 
         <EditText
             android:id="@+id/main_pwd"
@@ -66,42 +65,60 @@
             android:id="@+id/main_login_btn"
             android:layout_width="match_parent"
             android:layout_height="57dp"
-            android:layout_weight="0"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_weight="0"
             android:background="@drawable/btn_login"
             android:gravity="center"
-            android:textColor="#ffffff"
             android:letterSpacing="0.09"
             android:lineSpacingExtra="5sp"
-            android:textSize="17dp"
-            android:text="Log in"/>
+            android:text="Log in"
+            android:textColor="#ffffff"
+            android:textSize="17dp" />
 
-        <TextView
-            android:id="@null"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="17dp"
-            android:text="Forgot your login details? Get help Signing in."/>
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="57dp"
+                android:gravity="center"
+                android:text="Forgot your login details? Get help."
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/btn_custom_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FEFEFE"
+                android:text="Signing in" />
+        </LinearLayout>
 
         <TextView
-            android:id="@null"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:textSize="17dp"
-            android:text="Or"/>
+            android:text="Or"
+            android:textSize="17dp" />
 
         <TextView
-            android:id="@null"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center"
-            android:textStyle="bold"
+            android:text="Log in with Facebook"
             android:textColor="#51AEF8"
             android:textSize="17dp"
-            android:text="Log in with Facebook"/>
+            android:textStyle="bold" />
+
+<!--        <com.facebook.login.widget.LoginButton-->
+<!--            android:id="@+id/btn_facebook_login"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center" />-->
 
     </LinearLayout>
 
@@ -110,6 +127,6 @@
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:gravity="center"
-        android:textSize="17dp"
-        android:text="Don't have an account? Sign up"/>
+        android:text="Don't have an account? Sign up"
+        android:textSize="17dp" />
 </LinearLayout>

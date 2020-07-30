@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
         testData.add("With Study Together");
 
 
-        recycleHome.setAdapter(new HomeAdapter(testData));
+//        recycleHome.setAdapter(new HomeAdapter(testData));
 
         return root;
     }
