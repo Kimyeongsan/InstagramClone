@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recycleHome;
+    private HomeAdapter homeAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,12 +33,12 @@ public class HomeFragment extends Fragment {
         recycleHome.setHasFixedSize(true);
         recycleHome.setLayoutManager(new LinearLayoutManager(root.getContext()));
 
-        ArrayList<String> testData = new ArrayList<>();  //  임시 data
-        testData.add("With Study Together");
-        testData.add("With Study Together");
+        ArrayList<HomeData> list = new ArrayList<>();  //  임시 data
 
+        list.add(new HomeData(R.drawable.ic_account_circle_black_24dp, "title", R.drawable.example, "93 Likes", "user_id", "비 맞으면서 출근", "#비오는 날" ));
 
-//        recycleHome.setAdapter(new HomeAdapter(testData));
+        homeAdapter = new HomeAdapter(list);
+        recycleHome.setAdapter(homeAdapter);
 
         return root;
     }
