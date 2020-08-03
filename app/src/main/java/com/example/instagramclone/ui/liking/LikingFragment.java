@@ -23,13 +23,6 @@ public class LikingFragment extends Fragment {
         likingViewModel =
                 ViewModelProviders.of(this).get(LikingViewModel.class);
         View root = inflater.inflate(R.layout.fragment_liking, container, false);
-        final TextView textView = root.findViewById(R.id.text_liking);
-        likingViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }

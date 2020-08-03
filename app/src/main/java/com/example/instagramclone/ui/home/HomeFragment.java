@@ -38,11 +38,13 @@ public class HomeFragment extends Fragment {
 
         recycler_circle = root.findViewById(R.id.cycle_home_recycle);
         recycler_circle.setHasFixedSize(true);
-        recycler_circle.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        recycler_circle.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
 
         ArrayList<HomeData> list = new ArrayList<>();  //  임시 data
         ArrayList<HomeCircleData> circle_list = new ArrayList<>();  //  임시 data
 
+        list.add(new HomeData(R.drawable.ic_account_circle_black_24dp, "title", R.drawable.example, "93 Likes", "user_id", "비 맞으면서 출근", "#비오는 날" ));
+        list.add(new HomeData(R.drawable.ic_account_circle_black_24dp, "title", R.drawable.example, "93 Likes", "user_id", "비 맞으면서 출근", "#비오는 날" ));
         list.add(new HomeData(R.drawable.ic_account_circle_black_24dp, "title", R.drawable.example, "93 Likes", "user_id", "비 맞으면서 출근", "#비오는 날" ));
 
         circle_list.add(new HomeCircleData(R.drawable.ic_account_circle_black_24dp));

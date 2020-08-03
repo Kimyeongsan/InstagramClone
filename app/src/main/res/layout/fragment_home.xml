@@ -45,6 +45,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+<!--    ElasticListView로 바꿔볼 것-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cycle_home_recycle"
         android:layout_width="match_parent"
