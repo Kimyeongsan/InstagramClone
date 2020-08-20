@@ -42,32 +42,23 @@ public class MainActivity extends AppCompatActivity {
         getHashKey(mContext);
     }
 
-    // 프로젝트의 해시키를 반환
-
+    // 프로젝트의 해시키를 반환 // 임시코드
     @Nullable
-
     public static String getHashKey(Context context) {
 
         final String TAG = "KeyHash";
-
         String keyHash = null;
 
         try {
 
             PackageInfo info =
-
                     context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
-
-
 
             for (Signature signature : info.signatures) {
 
                 MessageDigest md;
-
                 md = MessageDigest.getInstance("SHA");
-
                 md.update(signature.toByteArray());
-
                 keyHash = new String(Base64.encode(md.digest(), 0));
 
                 Log.d(TAG, keyHash);
@@ -75,21 +66,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-
             Log.e("name not found", e.toString());
 
         }
 
-
-
         if (keyHash != null) {
-
             return keyHash;
-
         } else {
 
             return null;
-
         }
 
     }
