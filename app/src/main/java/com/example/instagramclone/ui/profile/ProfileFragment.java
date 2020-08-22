@@ -10,16 +10,19 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.instagramclone.LoginActivity;
 import com.example.instagramclone.R;
 
 import com.example.instagramclone.ui.basedata.ManagementData;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class ProfileFragment extends Fragment {
     private FirebaseAuth firebaseAuth;
+    ProfileViewAdapter profile_ViewAdapter;
     private View root;
 
     @Override
@@ -32,9 +35,26 @@ public class ProfileFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        profile_ViewAdapter = new ProfileViewAdapter(getParentFragmentManager());
+
+        ViewPager mViewPager = root.findViewById(R.id.profile_viewpager);
+        setupViewPager(mViewPager);
+
+        TabLayout tabLayout = root.findViewById(R.id.profile_tabs);
+        tabLayout.setupWithViewPager(mViewPager);
+
+
         initialize();
 
         return root;
+    }
+
+    public void setupViewPager(ViewPager viewPager) {
+        profile_ViewAdapter.addFragment(new Upload_Profile(), "달력");
+        profile_ViewAdapter.addFragment(new Tag_Profile(), "시간표");
+        viewPager.setAdapter(profile_ViewAdapter);
+
     }
 
     private void initialize() {

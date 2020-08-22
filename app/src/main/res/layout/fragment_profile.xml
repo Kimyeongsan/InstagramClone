@@ -118,7 +118,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="4dp"
                     android:gravity="center"
                     android:text="Post"></TextView>
 
@@ -133,23 +133,63 @@
         </LinearLayout>
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@null"
+        android:text="Edit Profile"
+        android:textColor="#000"
+        android:textSize="13dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Story Highlights"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:textColor="#000000">
+    </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Keep your favorite stories on your profile"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profile_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:orientation="horizontal">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/profile_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/profile_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@null">
+    </androidx.viewpager.widget.ViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="20dp"
         android:background="#ffffff">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:padding="3dp"
-            android:text="User Logout 설정"
-            android:textColor="#000"
-            android:textSize="18dp" />
 
         <Button
             android:id="@+id/btnLogOut"
