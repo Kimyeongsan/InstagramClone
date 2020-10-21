@@ -12,22 +12,25 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.example.instagramclone.ui.basedata.ManagementData;
 import com.example.instagramclone.ui.basedata.UserData;
-import com.facebook.CallbackManager;
-import com.facebook.login.LoginManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import com.facebook.CallbackManager;
+import com.facebook.login.LoginManager;
+
 import java.util.Arrays;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity{
     public EditText loginEmailId, logInpasswd;
     private Context mContext;
-    private Button btn_custom_login, main_login_btn;
+    private Button btn_custom_login, main_login_btn, signUpBtn;
+
     private LoginCallback mLoginCallback;
     private CallbackManager mCallbackManager;
 
@@ -52,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
         btn_custom_login = findViewById(R.id.btn_custom_login);
         main_login_btn = findViewById(R.id.main_login_btn);
 
+        signUpBtn = findViewById(R.id.btn_sign_up);
+
         btn_custom_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +64,14 @@ public class LoginActivity extends AppCompatActivity {
                 loginManager.logInWithReadPermissions(LoginActivity.this,
                         Arrays.asList("public_profile", "email"));
                 loginManager.registerCallback(mCallbackManager, mLoginCallback);
+            }
+        });
+
+        signUpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -122,6 +135,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     @Override
     protected void onStart() {

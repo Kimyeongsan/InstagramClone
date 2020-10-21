@@ -122,11 +122,26 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@null"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:gravity="center"
-        android:text="Don't have an account? Sign up"
-        android:textSize="17dp" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="Don't have an account? "
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/btn_sign_up"
+            android:layout_width="wrap_content"
+            android:background="@null"
+            android:layout_height="57dp"
+            android:gravity="center"
+            android:text="Sign up"
+            android:textSize="17dp" />
+    </LinearLayout>
 </LinearLayout>
